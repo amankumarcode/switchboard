@@ -1,0 +1,88 @@
+# Retail banking customer support.
+# Intent names match Banking77 labels. Examples are placeholders until step 2
+# replaces them with queries sampled from the Banking77 train split.
+
+domain: retail_banking
+version: "0.1"
+
+intents:
+  - name: card_arrival
+    description: >-
+      The customer ordered a new or replacement card and is asking where it is,
+      when it will be delivered, or how to track it. The card has not been received yet.
+    examples:
+      - "My new card still hasn't arrived, how long does delivery take?"
+    handler: card_delivery_status
+    risk: low
+
+  - name: activate_my_card
+    description: >-
+      The customer has received their card and wants to activate it or is having
+      trouble activating it.
+    examples:
+      - "How do I activate the card I just got in the mail?"
+    handler: card_activation
+    risk: low
+
+  - name: lost_or_stolen_card
+    description: >-
+      The customer no longer has their physical card because it was lost or stolen
+      and wants to report it or block it.
+    examples:
+      - "I lost my wallet with my card in it, please freeze it."
+    handler: card_block
+    risk: high
+
+  - name: compromised_card
+    description: >-
+      The customer still has their card but believes its details were exposed or
+      misused (fraud, skimming, data breach, unknown transactions they suspect are
+      fraudulent) and wants it secured or replaced.
+    examples:
+      - "I think my card details were stolen in a phishing scam."
+    handler: card_block
+    risk: high
+
+  - name: change_pin
+    description: >-
+      The customer wants to change or reset their card PIN.
+    examples:
+      - "How can I change my PIN?"
+    handler: pin_change
+    risk: low
+
+  - name: cancel_transfer
+    description: >-
+      The customer wants to stop, cancel or reverse a bank transfer they initiated.
+    examples:
+      - "I sent money to the wrong account, can I cancel the transfer?"
+    handler: transfer_cancellation
+    risk: high
+
+  - name: refund_not_showing_up
+    description: >-
+      The customer was promised a refund by a merchant but it has not appeared in
+      their account yet.
+    examples:
+      - "The shop said they refunded me last week but I don't see it."
+    handler: refund_status
+    risk: low
+
+  - name: card_payment_fee_charged
+    description: >-
+      The customer was charged an unexpected fee on a card payment and wants to
+      know why.
+    examples:
+      - "Why was I charged an extra fee when I paid with my card?"
+    handler: fee_explanation
+    risk: low
+
+out_of_scope:
+  description: >-
+    The query does not match any intent above: other banking topics, unrelated
+    requests, chit-chat, or messages too vague to classify.
+  handler: human_queue
+
+policy:
+  min_confidence: medium
+  human_review_risks: [high]
