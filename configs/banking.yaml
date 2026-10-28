@@ -1,6 +1,6 @@
 # Retail banking customer support.
-# Intent names match Banking77 labels. Examples are placeholders until step 2
-# replaces them with queries sampled from the Banking77 train split.
+# Intent names match Banking77 labels. Examples are sampled from the Banking77
+# train split by scripts/prepare_data.py (seed 7); the eval set uses the test split.
 
 domain: retail_banking
 version: "0.1"
@@ -11,7 +11,9 @@ intents:
       The customer ordered a new or replacement card and is asking where it is,
       when it will be delivered, or how to track it. The card has not been received yet.
     examples:
-      - "My new card still hasn't arrived, how long does delivery take?"
+      - "How can I track my card's delivery?"
+      - "I haven't received my card and am worried it is lost."
+      - "I have not received my card and it's been a week, what do I do?"
     handler: card_delivery_status
     risk: low
 
@@ -20,7 +22,9 @@ intents:
       The customer has received their card and wants to activate it or is having
       trouble activating it.
     examples:
-      - "How do I activate the card I just got in the mail?"
+      - "I just got my new card, how do I activate it?"
+      - "Activate my card"
+      - "How can I make my card ready to use?"
     handler: card_activation
     risk: low
 
@@ -29,7 +33,9 @@ intents:
       The customer no longer has their physical card because it was lost or stolen
       and wants to report it or block it.
     examples:
-      - "I lost my wallet with my card in it, please freeze it."
+      - "My card was stolen"
+      - "Who can I speak with regarding a lost card?"
+      - "Is there any way for you to find my card?"
     handler: card_block
     risk: high
 
@@ -39,7 +45,9 @@ intents:
       misused (fraud, skimming, data breach, unknown transactions they suspect are
       fraudulent) and wants it secured or replaced.
     examples:
-      - "I think my card details were stolen in a phishing scam."
+      - "I think someone else is using my card."
+      - "What do I do if I think someone has used my card without permission? I can see a few transactions I don't recognize."
+      - "I think that someone may be using my card, but I'm not sure,."
     handler: card_block
     risk: high
 
@@ -47,7 +55,9 @@ intents:
     description: >-
       The customer wants to change or reset their card PIN.
     examples:
-      - "How can I change my PIN?"
+      - "I need to make my card PIN a different number"
+      - "If I want to select a new PIN what do I do?"
+      - "Can you tell me where  can change my PIN?"
     handler: pin_change
     risk: low
 
@@ -55,7 +65,9 @@ intents:
     description: >-
       The customer wants to stop, cancel or reverse a bank transfer they initiated.
     examples:
-      - "I sent money to the wrong account, can I cancel the transfer?"
+      - "How do I fix a transaction to the wrong account?"
+      - "I made a mistake and performed a transaction on the wrong account!"
+      - "I made a transaction to the wrong account!"
     handler: transfer_cancellation
     risk: high
 
@@ -64,7 +76,9 @@ intents:
       The customer was promised a refund by a merchant but it has not appeared in
       their account yet.
     examples:
-      - "The shop said they refunded me last week but I don't see it."
+      - "I asked for a refund but its not here yet"
+      - "I'm supposed to be getting a refund but it hasn't shown up, now what?"
+      - "Did I not get my refund? I don't see it."
     handler: refund_status
     risk: low
 
@@ -73,7 +87,9 @@ intents:
       The customer was charged an unexpected fee on a card payment and wants to
       know why.
     examples:
-      - "Why was I charged an extra fee when I paid with my card?"
+      - "I paid with card and was charged a fee that shouldn't be there!"
+      - "How can I check how much free spending I have left? I have some big purchases coming up and want to know where I can look for any info."
+      - "I'm being charged for using my card!"
     handler: fee_explanation
     risk: low
 

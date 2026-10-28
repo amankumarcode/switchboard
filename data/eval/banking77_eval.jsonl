@@ -1,0 +1,420 @@
+{"id": "b77-0000", "text": "Can I purchase extra non-virtual cards?", "label": "out_of_scope", "source_label": "getting_spare_card"}
+{"id": "b77-0001", "text": "Paying in card resulted in a fee", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0002", "text": "What are the steps in order to activate my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0003", "text": "I am unhappy with my purchase, how do I cancel the order?", "label": "out_of_scope", "source_label": "request_refund"}
+{"id": "b77-0004", "text": "How do I unblock my PIN?", "label": "out_of_scope", "source_label": "pin_blocked"}
+{"id": "b77-0005", "text": "Can you freeze my card it was stolen", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0006", "text": "I believe my card has been stolen, what can I do about this situation? It's urgent.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0007", "text": "How do I freeze my bank card, as there has been a strange withdrawal?", "label": "out_of_scope", "source_label": "cash_withdrawal_not_recognised"}
+{"id": "b77-0008", "text": "I payed with a card and was charged an extra fee", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0009", "text": "The transfer is coming up as pending the payment is due today. Will I be charged a fee?", "label": "out_of_scope", "source_label": "pending_transfer"}
+{"id": "b77-0010", "text": "I think someone got my card details and used it because there are transactions i don't recognize. What do I do now?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0011", "text": "How can I freeze a stolen card?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0012", "text": "There are transactions I didn't make, someone else must have used my card.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0013", "text": "How long should my new card take to arrive?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0014", "text": "Can you freeze my card because someone used it while I was out of town. I did not make these purchases.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0015", "text": "I think someone is using my card to make transactions I don't remember.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0016", "text": "What is the process for activating my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0017", "text": "Why do I get charged additional fees on some payments, but not others?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0018", "text": "Freeze my account it's been hacked.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0019", "text": "I've lost track of my phone or someone stole it.", "label": "out_of_scope", "source_label": "lost_or_stolen_phone"}
+{"id": "b77-0020", "text": "I was charged a fee for a card payment. Why?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0021", "text": "I want to get an item refunded", "label": "out_of_scope", "source_label": "request_refund"}
+{"id": "b77-0022", "text": "I'm not certain, but someone may be using my card.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0023", "text": "I am waiting patiently for a week now for the seller to get back to me and there has been no response, could you please help me further with getting my money back.  Thank you.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0024", "text": "Why have I been charged twice for the same transaction?", "label": "out_of_scope", "source_label": "transaction_charged_twice"}
+{"id": "b77-0025", "text": "My card has not arrived yet, where is it?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0026", "text": "Why did it decline my payment?", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0027", "text": "I am waiting for my card to arrive.", "label": "out_of_scope", "source_label": "card_delivery_estimate"}
+{"id": "b77-0028", "text": "How do I cancel my transfer?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0029", "text": "Is it normal to have to wait over a week for my new card?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0030", "text": "I received my new card, how is it activated?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0031", "text": "I transferred money but the recipient says it has not arrived. Why would this be?", "label": "out_of_scope", "source_label": "transfer_not_received_by_recipient"}
+{"id": "b77-0032", "text": "Will I always be charged a fee for using my card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0033", "text": "Where is my refund? I have been checking my account all day.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0034", "text": "Did my refund go through? It's not on my statement.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0035", "text": "I can't find my card and think it may have been stolen.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0036", "text": "Where can I see the refund in my account", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0037", "text": "Am I able to change my PIN at any cash machines?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0038", "text": "I'm really stuck. I don't know why but my card payment has not gone through.", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0039", "text": "Someone has my card number, freeze my account.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0040", "text": "Something is wrong with my payment account since it has been declined", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0041", "text": "im not sure what this charge is for", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0042", "text": "Why has payment been returned?", "label": "out_of_scope", "source_label": "reverted_card_payment?"}
+{"id": "b77-0043", "text": "I want to go back on what I did this morning", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0044", "text": "What is the activation process on my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0045", "text": "Status of the card I ordered.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0046", "text": "Why was I charged an extra fee when using a card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0047", "text": "Would I be able to get a refund for something I bought?", "label": "out_of_scope", "source_label": "request_refund"}
+{"id": "b77-0048", "text": "I'd like to cancel a transfer", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0049", "text": "I want to reverse my transaction from earlier", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0050", "text": "I have a new card and I want to activate it", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0051", "text": "My card is lost! What can I do?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0052", "text": "Is there a fee when you pay with your card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0053", "text": "I lost my wallet today with all my credit cards. Will you please block the card and send a replacement?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0054", "text": "I have exceeded the number of times I can try my PIN", "label": "out_of_scope", "source_label": "pin_blocked"}
+{"id": "b77-0055", "text": "How do I use my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0056", "text": "I got my new card. How do I activate it?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0057", "text": "They charged me for paying with my card.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0058", "text": "Help me set up a new PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0059", "text": "Why did my transfer decline", "label": "out_of_scope", "source_label": "declined_transfer"}
+{"id": "b77-0060", "text": "I need my PIN", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0061", "text": "Please, activate my card", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0062", "text": "I'd like to make a new PIN selection.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0063", "text": "I am having issues with identity verification", "label": "out_of_scope", "source_label": "unable_to_verify_identity"}
+{"id": "b77-0064", "text": "Is the bank the only place I can change my PIN>", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0065", "text": "How do I freeze my card using the app?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0066", "text": "Someone stole my wallet earlier today, not sure exactly when, probably on Piccadilly circus. Can you check if there were any attempts to use the card and obviously block it?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0067", "text": "I should have received a refund however it is not showing on my statement", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0068", "text": "How do I freeze my card? I think someone is using it to make a bunch of online transactions.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0069", "text": "Oh no!  I lost my card!  Help!", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0070", "text": "How do I go about activating my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0071", "text": "My card still hasn't arrived after 2 weeks. Is it lost?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0072", "text": "How can I change the PIN?  Do I have to go to a real bank?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0073", "text": "How can I find the nearest ATM?", "label": "out_of_scope", "source_label": "atm_support"}
+{"id": "b77-0074", "text": "When will my transfer go through?", "label": "out_of_scope", "source_label": "pending_transfer"}
+{"id": "b77-0075", "text": "Where do I change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0076", "text": "Help! Someone stole my card!", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0077", "text": "I ordered my card 2 weeks ago and it still isn't here? What do I do?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0078", "text": "I made a mistake and need to cancel a transaction", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0079", "text": "Do charge fees for transfers?", "label": "out_of_scope", "source_label": "transfer_fee_charged"}
+{"id": "b77-0080", "text": "What steps do I need to take to change my card PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0081", "text": "Why are fees charged on cash withdrawals? I went to withdraw some money earlier today after shopping. There's a fee that wasn't there before.", "label": "out_of_scope", "source_label": "cash_withdrawal_charge"}
+{"id": "b77-0082", "text": "What countries are you currently in?", "label": "out_of_scope", "source_label": "country_support"}
+{"id": "b77-0083", "text": "i want to track the card you sent", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0084", "text": "Is there a location near me that i can change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0085", "text": "still waiting on that card", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0086", "text": "My card got lost.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0087", "text": "I was supposed to get a purchase refunded but I don't see the money in my account", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0088", "text": "What do I need to do to activate my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0089", "text": "How do I freeze my account?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0090", "text": "I tried to transfer money but it said it wasn't possible? I've done this before and it worked why isn't it working now?", "label": "out_of_scope", "source_label": "beneficiary_not_allowed"}
+{"id": "b77-0091", "text": "The refund has not appeared in my account", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0092", "text": "What should I do if I lost my card?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0093", "text": "How do I report my card lost or stolen?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0094", "text": "I cannot locate the card PIN.", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0095", "text": "I tried activating my bill of fare and it didn't workplace", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0096", "text": "I think someone has access to my card numbers that shouldn't.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0097", "text": "What businesses accept this card?", "label": "out_of_scope", "source_label": "card_acceptance"}
+{"id": "b77-0098", "text": "I'm at an ATM and withdrew 30 pounds and was only given 10. What should I do?", "label": "out_of_scope", "source_label": "wrong_amount_of_cash_received"}
+{"id": "b77-0099", "text": "I am in Austria right now. I need to change my PIN ASAP, so can I still do this from here?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0100", "text": "My card is gone I think it was stolen", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0101", "text": "Why was a charged a fee for using the card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0102", "text": "I requested a refund and it is missing.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0103", "text": "How long will it take to activate my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0104", "text": "Is there a reason I was charged a fee for using my card as payment? I've never had an extra fee before.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0105", "text": "Where is the card PIN?", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0106", "text": "Why are there fees for card usage?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0107", "text": "The exchange rate for my withdrawal isn't correct and doesn't match the actual exchange rate.", "label": "out_of_scope", "source_label": "wrong_exchange_rate_for_cash_withdrawal"}
+{"id": "b77-0108", "text": "When will my card be activated?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0109", "text": "I need help activating my new card.", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0110", "text": "My transaction needs to be canceled.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0111", "text": "I keep checking my bank statements but I don't see a refund that I've requested from a seller. Can you ensure that I receive the refund from the seller?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0112", "text": "How do I change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0113", "text": "Cancel my last transfer", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0114", "text": "How do I avoid getting charged a fee on my card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0115", "text": "I did not get my card yet, is it lost?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0116", "text": "Is there a reason why my transaction is taking so long?", "label": "out_of_scope", "source_label": "transfer_not_received_by_recipient"}
+{"id": "b77-0117", "text": "Can I freeze my card right now?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0118", "text": "Why can't I activate my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0119", "text": "I still don't have my card after 2 weeks.  What should I do?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0120", "text": "How do I deal with a stolen card?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0121", "text": "I ordered a card a week ago, and it's still not here. What do I do?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0122", "text": "Need help with my card. It's not working.", "label": "out_of_scope", "source_label": "card_not_working"}
+{"id": "b77-0123", "text": "Why hasn't my card been delivered?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0124", "text": "My card is being used online to make a bunch of purchases! Someone else is using it fraudulently. Can you help me freeze it?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0125", "text": "Why is my refund missing from my  statement?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0126", "text": "Can I reactivate my lost card that I found this morning in my jacket pocket?", "label": "out_of_scope", "source_label": "card_linking"}
+{"id": "b77-0127", "text": "Hi. I'm a new customer to your system and I think something isn't working right - or maybe it is. Maybe you can confirm. I tried to top up today (my first time ever) and it's been stuck at \"pending\" for over an hour now. Is it supposed to do this or is there something wrong in the system?", "label": "out_of_scope", "source_label": "pending_top_up"}
+{"id": "b77-0128", "text": "I need help cancelling a transaction.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0129", "text": "How can I cancel a transfer?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0130", "text": "Why was my payment cancelled?", "label": "out_of_scope", "source_label": "reverted_card_payment?"}
+{"id": "b77-0131", "text": "Is there a way to revert my transaction from this morning?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0132", "text": "I am not seeing a refund in my statement.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0133", "text": "Some idiot stole my card.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0134", "text": "the balance on my account didnt change when i transferred money", "label": "out_of_scope", "source_label": "balance_not_updated_after_bank_transfer"}
+{"id": "b77-0135", "text": "Where is my new card? I have been waiting a week!", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0136", "text": "My entire gym bag, including my wallet, was stolen out of my locker today. Everything in my wallet is gone - how do I block the card to make it can't be used?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0137", "text": "What kind of cash machines would allow me to change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0138", "text": "What is the fee to receive money?", "label": "out_of_scope", "source_label": "top_up_by_bank_transfer_charge"}
+{"id": "b77-0139", "text": "I am chatting about an order from a long while back.  I never got it to this day and am deeply upset by this!  I want all of my money back!  I just can not accept paying for something I never got.", "label": "out_of_scope", "source_label": "request_refund"}
+{"id": "b77-0140", "text": "Help me.  My card doesn't work.", "label": "out_of_scope", "source_label": "card_not_working"}
+{"id": "b77-0141", "text": "I made a mistake with a transaction!", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0142", "text": "What is the fee on my card payment?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0143", "text": "I think my child used my card while I wasn't home.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0144", "text": "My cash withdrawl was declined why?", "label": "out_of_scope", "source_label": "declined_cash_withdrawal"}
+{"id": "b77-0145", "text": "Is there any way to cancel a transfer?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0146", "text": "The ATM won't give back my card", "label": "out_of_scope", "source_label": "card_swallowed"}
+{"id": "b77-0147", "text": "I requested a refund from a merchant days ago but I do not see it in my account.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0148", "text": "What should I do if I think someone is using my card.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0149", "text": "I made a card payment and a fee is showing up?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0150", "text": "Please tell me which cash machines will allow me to change my pin.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0151", "text": "How do I update the PIN on my account?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0152", "text": "Can i change my PIN at the ATM?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0153", "text": "Whats the delivery time to the United States?", "label": "out_of_scope", "source_label": "card_delivery_estimate"}
+{"id": "b77-0154", "text": "Where do I go to get the code to verify the top up card?", "label": "out_of_scope", "source_label": "verify_top_up"}
+{"id": "b77-0155", "text": "What do I do if I think my card was improperly used?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0156", "text": "Do you have any idea on when I will receive my refund? I got my statement and it was not there.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0157", "text": "How might  I change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0158", "text": "Can I have an item refunded?", "label": "out_of_scope", "source_label": "request_refund"}
+{"id": "b77-0159", "text": "I would like to change my pin.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0160", "text": "I believe my credit card was stolen.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0161", "text": "I've been waiting longer than expected for my card.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0162", "text": "Can I cancel a transfer if is already processed?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0163", "text": "I need to find out what is the limit for top-ups.", "label": "out_of_scope", "source_label": "top_up_limits"}
+{"id": "b77-0164", "text": "Somebody has stolen my card, I need help please.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0165", "text": "My latest payment was declined, I was told everything was back to working order. What happened?", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0166", "text": "What is the tracking number for my card that was mailed?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0167", "text": "How do I track my card?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0168", "text": "The app doesn't believe that I am me", "label": "out_of_scope", "source_label": "unable_to_verify_identity"}
+{"id": "b77-0169", "text": "Is there a way my new card can be renewed?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0170", "text": "How can I start using my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0171", "text": "I would appreciate that someone let me know when there is an extra charge for payments. I was checking the app earlier and saying a charge on one of my payments that was additional that no one made me aware of before.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0172", "text": "There is an unauthorized fee.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0173", "text": "So the transfer finally worked but now it's been pending for quite a long time. How long do you expect me to wait for it? It's quite urgent", "label": "out_of_scope", "source_label": "pending_transfer"}
+{"id": "b77-0174", "text": "My card was used without my permission.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0175", "text": "I am travelling for two more weeks but really need to change my PIN asap. What do I do?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0176", "text": "Is the PIN delivered separately?", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0177", "text": "The rate of exchange isn't right for my cash withdrawal.", "label": "out_of_scope", "source_label": "wrong_exchange_rate_for_cash_withdrawal"}
+{"id": "b77-0178", "text": "My ATM got stuck and I'm not sure what to do.", "label": "out_of_scope", "source_label": "card_swallowed"}
+{"id": "b77-0179", "text": "I made a mistake when I did a transfer so now what can I do to fix that?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0180", "text": "Why can't I see a recent refund in my statement?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0181", "text": "What are the ways for others to transfer me money?", "label": "out_of_scope", "source_label": "receiving_money"}
+{"id": "b77-0182", "text": "My card hasn't arrived yet.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0183", "text": "Can I use app to freeze my card and dispute fraud?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0184", "text": "Please help me!  I need to cancel a transaction.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0185", "text": "Do you know why my card payment did not work?", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0186", "text": "i was supposed to get a refund but my balance hasn't changed, why not?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0187", "text": "Help me cancel my transaction", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0188", "text": "I still have not received my new card, I ordered over a week ago.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0189", "text": "What do I do if I think someone managed to get my card information?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0190", "text": "Someone needs to make me aware when there are extra charges for payments. I happened to be looking at the app earlier and noticed a charge associated to a payment that was extra that no one made me aware of before at all.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0191", "text": "Why do you charge for payments? Why aren't your charges clearly laid out in the agreement?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0192", "text": "My card has not arrived yet.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0193", "text": "What do I do to stop unauthorized transactions on my card? I was never in the place from which the transactions on my bill were made and I never made them. Please help!", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0194", "text": "The transfer I just made needs to be cancelled right now. It was my mistake. Please help me cancel it before it goes through!", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0195", "text": "My card was declined in a shop", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0196", "text": "Can I use app to freeze account and dispute fraud?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0197", "text": "I would like to revert a transaction I did this morning", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0198", "text": "Can I cancel a transfer", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0199", "text": "If I make a transaction can I cancel it?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0200", "text": "I used my card for a purchase and was charged a fee", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0201", "text": "Someone else used my card!", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0202", "text": "I desperately need to change my PIN, but I'm overseas on vacation right now. How can I do this?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0203", "text": "Are you able to locate my card?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0204", "text": "I couldn't make a transfer to a beneficiary!", "label": "out_of_scope", "source_label": "beneficiary_not_allowed"}
+{"id": "b77-0205", "text": "I am having trouble verifying my identity.", "label": "out_of_scope", "source_label": "unable_to_verify_identity"}
+{"id": "b77-0206", "text": "I have been waiting longer than expected for my bank card, could you provide information on when it will arrive?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0207", "text": "I am experiencing difficulty providing my identity.", "label": "out_of_scope", "source_label": "unable_to_verify_identity"}
+{"id": "b77-0208", "text": "My card was taken from me", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0209", "text": "I see random purchases to my account, was it hacked?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0210", "text": "How can I activate my card>", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0211", "text": "My card has been swallowed by an ATM", "label": "out_of_scope", "source_label": "card_swallowed"}
+{"id": "b77-0212", "text": "I believe someone is using my card without my agreement!", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0213", "text": "Show me how to change my pin?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0214", "text": "I am missing a refund.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0215", "text": "Someone is using my account to do online shopping! Please freeze it asap", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0216", "text": "My card is about to expire. How do I get a new one?", "label": "out_of_scope", "source_label": "card_about_to_expire"}
+{"id": "b77-0217", "text": "I see some fees for cash withdraw.", "label": "out_of_scope", "source_label": "cash_withdrawal_charge"}
+{"id": "b77-0218", "text": "My top-up has failed.", "label": "out_of_scope", "source_label": "top_up_failed"}
+{"id": "b77-0219", "text": "I asked for a refund last week but nothing has happened yet, can you help me please?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0220", "text": "Would like to use my card and need to activate it first.  Can you help me do this?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0221", "text": "Where can I receive my card?", "label": "out_of_scope", "source_label": "order_physical_card"}
+{"id": "b77-0222", "text": "How do I activate a card I received?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0223", "text": "My card is lost! What do I do now?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0224", "text": "I ordered a card and I still haven't received it. It's been two weeks. What can I do?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0225", "text": "Where can I find instructions to change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0226", "text": "Please help me to know the status of my card payment as its pending since a while.", "label": "out_of_scope", "source_label": "pending_card_payment"}
+{"id": "b77-0227", "text": "Card payment declined?", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0228", "text": "I would like to change my PIN but I am not currently in the country.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0229", "text": "i was charged when i used a us issued card. why and what cards are free to use to add money", "label": "out_of_scope", "source_label": "top_up_by_card_charge"}
+{"id": "b77-0230", "text": "I tried to send someone money but they haven't received it.", "label": "out_of_scope", "source_label": "transfer_not_received_by_recipient"}
+{"id": "b77-0231", "text": "Is there a way to know when my card will arrive?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0232", "text": "When will I get my card?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0233", "text": "I'm still waiting on my card to be delivered.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0234", "text": "My recent transfer needs to be cancelled immediately; it was a mistake, please can you cancel it before it goes through?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0235", "text": "It seems someone used my card! There are a few transactions from a small town in the middle of nowhere that I definitely have not made! Please prevent them from using it immediately!", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0236", "text": "Where is the tracking number for the card you sent me?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0237", "text": "Help.  I have a stolen card!", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0238", "text": "Why would I be charged a fee for card payment?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0239", "text": "someone is using my account", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0240", "text": "Is using my card free?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0241", "text": "I accidentally made a transaction to the wrong account.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0242", "text": "I think someone copied the numbers on my card and is using them.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0243", "text": "Is there tracking info available?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0244", "text": "I would like to change my card PIN.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0245", "text": "I need to cancel my recent transfer immediately, I made a mistake there, please help quickly before it goes through", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0246", "text": "When my card expires what happens to my account?", "label": "out_of_scope", "source_label": "card_about_to_expire"}
+{"id": "b77-0247", "text": "I need to make an immediate cancellation related to a transfer. This was a mistake. Please assist quickly so this does not actually go through.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0248", "text": "If I feel someone has my card information, can I get a new card?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0249", "text": "What is the tracking number for the card you sent?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0250", "text": "i have not received my card", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0251", "text": "How do I know when my card will arrive?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0252", "text": "I bought something and returned it and the money from the return isn't in my account.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0253", "text": "Could you please activate my card", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0254", "text": "There is a fee on my account. Why?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0255", "text": "My refund doesn't seem to be showing on my statement.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0256", "text": "Why did I have to pay more when I do it with my card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0257", "text": "I don't want the transaction to go through now", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0258", "text": "Can I cancel my transaction?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0259", "text": "How can I activate my card so I can start using it?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0260", "text": "I need a new Pin how do I go about that?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0261", "text": "I need to cancel an incorrect transaction.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0262", "text": "How do I report my card stolen?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0263", "text": "There's a refund missing from my statement", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0264", "text": "What is the fee charged with this card payment?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0265", "text": "How to change the PIN on my card?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0266", "text": "Assist me please with card activation.", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0267", "text": "Why are you declining my payment? Everything was fine.", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0268", "text": "I show another charge on my card from when I used it, why?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0269", "text": "I do not have my pin", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0270", "text": "Can you look at my account ans see why my card was declined", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0271", "text": "Send my card as soon as you are able to.", "label": "out_of_scope", "source_label": "card_delivery_estimate"}
+{"id": "b77-0272", "text": "What should I do if my card is missing?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0273", "text": "In what ATM can I change my pin?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0274", "text": "I think my card was stolen.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0275", "text": "The refund isn't showing up on my account.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0276", "text": "When would my card be charged an extra fee for a transaction?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0277", "text": "Why hasn't my recipient received their money?", "label": "out_of_scope", "source_label": "transfer_not_received_by_recipient"}
+{"id": "b77-0278", "text": "I'm in Spain and my stuff has been stolen. My card was with it and I need a new one shipped and the old one frozen.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0279", "text": "Any fee for topping up?", "label": "out_of_scope", "source_label": "top_up_by_card_charge"}
+{"id": "b77-0280", "text": "The hotel called and said I left my phone in the room.", "label": "out_of_scope", "source_label": "lost_or_stolen_phone"}
+{"id": "b77-0281", "text": "I want to choose a different PIN.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0282", "text": "Can a transaction be cancelled?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0283", "text": "How can I change my Tholepin ?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0284", "text": "I have been charged a fee for paying with card", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0285", "text": "How can I stop fraud on my account right now?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0286", "text": "My refund is missing from my statement.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0287", "text": "What should I do if I think that someone else may be using my card.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0288", "text": "Why is my transfer not done yet?", "label": "out_of_scope", "source_label": "pending_transfer"}
+{"id": "b77-0289", "text": "I am still waiting for my card after 1 week.  Is this ok?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0290", "text": "So what items  actually come  with  extra  fees", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0291", "text": "Still waiting on a refund.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0292", "text": "Can you assist me with unblocking my PIN? I put it in wrong too many times.", "label": "out_of_scope", "source_label": "pin_blocked"}
+{"id": "b77-0293", "text": "I think I lost my card . I dont know how long it has been missing. Can you see if maybe someone else has been using it?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0294", "text": "I cannot find my credit card.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0295", "text": "Where did the extra fee on my statement come from?", "label": "out_of_scope", "source_label": "extra_charge_on_statement"}
+{"id": "b77-0296", "text": "Someone I don't know has used my card without permission.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0297", "text": "I need help with a lost card", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0298", "text": "I paid with card and I think there was a fee applied.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0299", "text": "I want to set a new PIN", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0300", "text": "Why isn't a recent refund on my statement?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0301", "text": "I would like some help getting a refund back from a seller. It still isn't showing up on my statement and I requested this a long time ago. I'm not sure why it's not returned yet. Can you assist me in getting this money back?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0302", "text": "It's been a week and I have done everything that I was asked to do and still nothing. I have contacted the seller and have not gotten a response. Please understand my frustration and put the money back in my account.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0303", "text": "How do I report a stolen card?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0304", "text": "I need to change my PIN. Can I do that at a cash machine?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0305", "text": "How do I change currencies to euros?", "label": "out_of_scope", "source_label": "fiat_currency_support"}
+{"id": "b77-0306", "text": "What do I need to do to change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0307", "text": "I still haven't seen a refund on my account", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0308", "text": "I think my identity has been stolen, can you check on unauthorized charges?", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0309", "text": "What's the right way to activate my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0310", "text": "There are a few transaction that I don't recognize, I think someone managed to get my card details and use it.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0311", "text": "going to need a new card what are the fees and time it takes", "label": "out_of_scope", "source_label": "card_about_to_expire"}
+{"id": "b77-0312", "text": "is my card PIN saved in the app", "label": "out_of_scope", "source_label": "get_physical_card"}
+{"id": "b77-0313", "text": "How long will it take to get my refund", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0314", "text": "I would like to activate my card to use now, can you help me?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0315", "text": "I need to change my PIN.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0316", "text": "I did what you told me earlier and contacted the seller for a refund directly, but nothing is happening! It's been a week and I still haven't got anything. Please just give me back my money", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0317", "text": "My bags were stolen. I need a new card but need to cancel the stolen one.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0318", "text": "How long does a card delivery take?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0319", "text": "I requested a refund from a store but it hasn't arrived.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0320", "text": "Someone stole my card. I need to report it stolen. I made a police report already, but how do I report it with you?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0321", "text": "Can I unblock my pin?", "label": "out_of_scope", "source_label": "pin_blocked"}
+{"id": "b77-0322", "text": "I don't recognize some of the transactions on my card, I think someone must have gotten my card info and used it.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0323", "text": "How do I update my PIN to a new number?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0324", "text": "Help me check where the funds came from.", "label": "out_of_scope", "source_label": "verify_source_of_funds"}
+{"id": "b77-0325", "text": "I got my new card but I am not sure if it need s activated and how?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0326", "text": "Tell me how to go about activating my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0327", "text": "Someone else is using my card, freeze it.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0328", "text": "How long does it take for a refund?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0329", "text": "I need help. I asked for a refund from a merchant a while ago, but I have not gotten my money back. I keep checking my account, but nothing is showing up. What should I do now?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0330", "text": "Can I change the amount I made on a payment that I made to the payment is correct.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0331", "text": "Can you tell me why my refund is not showing in my statement?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0332", "text": "I just got my card and want to use it, how do I activate my card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0333", "text": "I need help with activating my card", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0334", "text": "I requested a refund, and never received it. What can I do?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0335", "text": "For some reason my account's been charged an extra dollar.", "label": "out_of_scope", "source_label": "extra_charge_on_statement"}
+{"id": "b77-0336", "text": "For the first time I got a fee on my account. How do I know when you charge these fees?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0337", "text": "My new pin needs to be set.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0338", "text": "Someone else may be using my card.  There are transactions I don't recognize.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0339", "text": "When will my funds transfer?", "label": "out_of_scope", "source_label": "transfer_not_received_by_recipient"}
+{"id": "b77-0340", "text": "How do I activate a new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0341", "text": "I need to change my pin but I am on the road.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0342", "text": "Are my friends able to top up my account?", "label": "out_of_scope", "source_label": "topping_up_by_card"}
+{"id": "b77-0343", "text": "Someone stopped my payment", "label": "out_of_scope", "source_label": "reverted_card_payment?"}
+{"id": "b77-0344", "text": "I'm starting to think my card is lost because it still hasn't arrived, can you help?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0345", "text": "still waiting on my new card", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0346", "text": "Why was I charged a fee when I paid with card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0347", "text": "May I receive a different card pin", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0348", "text": "What is the process of card activation?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0349", "text": "Why doesn't a return show up im my account from a purchase I made?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0350", "text": "I would like to use the bank transfer feature, but I can't find it. Can you please give me the details?", "label": "out_of_scope", "source_label": "transfer_into_account"}
+{"id": "b77-0351", "text": "Why did I have to pay extra because I paid with card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0352", "text": "How do I locate my card?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0353", "text": "WHAT CAN I DO AFTER THE CARD MISSING", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0354", "text": "I think something went wrong with my card delivery as I haven't received it yet.", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0355", "text": "I have been charged with a fee for paying with my card.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0356", "text": "How do I set a new pin?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0357", "text": "how to activate card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0358", "text": "I cant find my card, it's gone.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0359", "text": "I submitted a transaction to the incorrect account.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0360", "text": "Somehow I am missing my card.  What should I do?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0361", "text": "Does the card you sent have a way to track to it?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0362", "text": "Help!  I can't find my card.", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0363", "text": "I was expecting my new card and am wondering why I haven't received it yet?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0364", "text": "I lost my phone and would like to freeze my accounts.", "label": "out_of_scope", "source_label": "lost_or_stolen_phone"}
+{"id": "b77-0365", "text": "When can I expect to receive my new card?", "label": "out_of_scope", "source_label": "card_delivery_estimate"}
+{"id": "b77-0366", "text": "I am awaiting my refund", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0367", "text": "I got my new card where do I go to activate it?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0368", "text": "Can i cancel a charge?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0369", "text": "Tell me how to cancel a transfer.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0370", "text": "I made a transaction but did it to the wrong account.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0371", "text": "I made a transaction this morning and would like to revert it.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0372", "text": "Why was I charged for card payment?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0373", "text": "My card does not work", "label": "out_of_scope", "source_label": "card_not_working"}
+{"id": "b77-0374", "text": "I made an error in payment yesterday and I need it fixed asap because it's for my rent tomorrow.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0375", "text": "I'm still waiting for delivery of my new card, why is it taking so long?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0376", "text": "How do I deal with a blocked PIN?", "label": "out_of_scope", "source_label": "pin_blocked"}
+{"id": "b77-0377", "text": "I have tried to use my card several times and it does not work.", "label": "out_of_scope", "source_label": "card_not_working"}
+{"id": "b77-0378", "text": "Why do you charge fees on card payments?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0379", "text": "My statement doesn't show that a refund has processed", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0380", "text": "I need my card to come as soon as possible.", "label": "out_of_scope", "source_label": "card_delivery_estimate"}
+{"id": "b77-0381", "text": "Activating my card", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0382", "text": "If I am overseas, how do I change my pin?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0383", "text": "Why was I charged an extra fee when paying with my card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0384", "text": "What fees apply when using a card?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0385", "text": "Which cash machines will allow me to change my PIN?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0386", "text": "My refund is missing", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0387", "text": "This is URGENT, I typed the wrong payment information for a payment I needed to make and have clicked send, I need to reverse the transaction immediately.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0388", "text": "What are the steps to activating a new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0389", "text": "I ordered a card but it has not arrived. Help please!", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0390", "text": "The transactions showing up are strange, I think my card was used without me knowing.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0391", "text": "I think someone else is using my card.  There are transactions I didn't make.", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0392", "text": "Is a copy of the police report necessary for completing the report process?", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0393", "text": "Can I check somewhere if there will be a fee on my payment or not? Seems you are charging in some cases, what's the pattern there?", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0394", "text": "Help! I keep checking my account, but my refund is not showing. I requested that a seller refund my money a while back, but there is no money showing in my account. What can you do for me?", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
+{"id": "b77-0395", "text": "Do you know if there is a tracking number for the new card you sent me?", "label": "card_arrival", "source_label": "card_arrival"}
+{"id": "b77-0396", "text": "Help me please!  My card was stolen!", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0397", "text": "My actual card isn't working.", "label": "out_of_scope", "source_label": "card_not_working"}
+{"id": "b77-0398", "text": "How can someone add money to my account?", "label": "out_of_scope", "source_label": "topping_up_by_card"}
+{"id": "b77-0399", "text": "Is there a way to reset my passcode?", "label": "out_of_scope", "source_label": "passcode_forgotten"}
+{"id": "b77-0400", "text": "card is lost, please help", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0401", "text": "What do I need to do to activate my new card?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0402", "text": "I just got this card & I don't know how to activate it.", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0403", "text": "My card got stolen!", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0404", "text": "I need a new PIN.", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0405", "text": "My credit card was declined.", "label": "out_of_scope", "source_label": "declined_card_payment"}
+{"id": "b77-0406", "text": "Do cash machines let me change my pin?", "label": "change_pin", "source_label": "change_pin"}
+{"id": "b77-0407", "text": "I want to cancel a transfer right away! Can you help?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0408", "text": "My statement has a dollar I have been charged showing up on it.", "label": "out_of_scope", "source_label": "extra_charge_on_statement"}
+{"id": "b77-0409", "text": "I am not able to do a transfer to an account", "label": "out_of_scope", "source_label": "beneficiary_not_allowed"}
+{"id": "b77-0410", "text": "What is the exchange rate like on this app?", "label": "out_of_scope", "source_label": "exchange_rate"}
+{"id": "b77-0411", "text": "I transferred the wrong amount and would like to cancel the transaction.", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0412", "text": "I would like to get help from someone with activating my card.", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0413", "text": "My card has been compromised", "label": "compromised_card", "source_label": "compromised_card"}
+{"id": "b77-0414", "text": "I was charged a fee after using my card and I shouldn't have been.", "label": "card_payment_fee_charged", "source_label": "card_payment_fee_charged"}
+{"id": "b77-0415", "text": "I need you to cancel a transfer that I made.  It is the wrong account number and the app won't let me stop the transaction.  Please stop it!", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0416", "text": "How do i cancel my transaction?", "label": "cancel_transfer", "source_label": "cancel_transfer"}
+{"id": "b77-0417", "text": "I lost my card", "label": "lost_or_stolen_card", "source_label": "lost_or_stolen_card"}
+{"id": "b77-0418", "text": "I need to activate my card can you do that now?", "label": "activate_my_card", "source_label": "activate_my_card"}
+{"id": "b77-0419", "text": "Hi, As suggested by you, i have asked the seller to initiate the refund, it has been a week and i haven't received my money. Please advise.", "label": "refund_not_showing_up", "source_label": "refund_not_showing_up"}
