@@ -1028,6 +1028,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "pydantic" },
     { name = "pyyaml" },
+    { name = "scikit-learn" },
     { name = "uvicorn" },
 ]
 
@@ -1036,7 +1037,6 @@ dev = [
     { name = "httpx" },
     { name = "pytest" },
     { name = "ruff" },
-    { name = "scikit-learn" },
 ]
 
 [package.metadata]
@@ -1045,6 +1045,7 @@ requires-dist = [
     { name = "fastapi" },
     { name = "pydantic", specifier = ">=2" },
     { name = "pyyaml" },
+    { name = "scikit-learn", specifier = ">=1.9.1" },
     { name = "uvicorn" },
 ]
 
@@ -1053,7 +1054,6 @@ dev = [
     { name = "httpx" },
     { name = "pytest" },
     { name = "ruff" },
-    { name = "scikit-learn" },
 ]
 
 [[package]]

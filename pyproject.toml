@@ -10,6 +10,7 @@ dependencies = [
     "fastapi",
     "pydantic>=2",
     "pyyaml",
+    "scikit-learn>=1.9.1",
     "uvicorn",
 ]
 
@@ -21,7 +22,6 @@ dev = [
     "httpx",
     "pytest",
     "ruff",
-    "scikit-learn",
 ]
 
 [build-system]
