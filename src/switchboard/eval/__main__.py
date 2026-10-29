@@ -12,7 +12,7 @@ from pathlib import Path
 from switchboard.classifier import Classifier
 from switchboard.config import load_config
 from switchboard.eval.harness import load_eval_set, run_eval, write_predictions
-from switchboard.eval.metrics import compute_metrics
+from switchboard.eval.metrics import compute_metrics, compute_routing
 from switchboard.eval.report import render_report
 from switchboard.providers.anthropic import AnthropicProvider
 from switchboard.providers.factory import get_provider
@@ -38,6 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     predictions = run_eval(classifier, rows, workers=args.workers)
     pricing = settings.pricing if settings else None
     metrics = compute_metrics(predictions, config.intent_names, pricing)
+    routing = compute_routing(predictions, config)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     stem = f"eval-{re.sub(r'[^A-Za-z0-9._-]', '_', model)}-{classifier.prompt_version}"
@@ -50,6 +51,7 @@ def main(argv: list[str] | None = None) -> int:
             settings=settings,
             prompt_version=classifier.prompt_version,
             dataset=str(args.data),
+            routing=routing,
         ),
         encoding="utf-8",
     )
@@ -57,6 +59,11 @@ def main(argv: list[str] | None = None) -> int:
 
     print(
         f"accuracy={metrics.accuracy:.1%} macro_f1={metrics.macro_f1:.3f} errors={metrics.errors}"
+    )
+    print(
+        f"auto-handled={routing.auto_share:.1%} "
+        f"wrong-among-auto={routing.auto_error_rate or 0:.1%} (min_confidence="
+        f"{routing.min_confidence.value})"
     )
     print(f"Report: {report_path}")
     return 0

@@ -6,7 +6,7 @@ from switchboard.classifier import Classifier
 from switchboard.config import OUT_OF_SCOPE, Confidence, PricingConfig
 from switchboard.eval.__main__ import main
 from switchboard.eval.harness import Prediction, load_eval_set, run_eval
-from switchboard.eval.metrics import compute_metrics
+from switchboard.eval.metrics import compute_metrics, compute_routing
 from switchboard.eval.report import render_report
 from switchboard.providers import MockProvider
 
@@ -81,12 +81,40 @@ def test_empty_predictions_rejected():
         compute_metrics([], LABELS)
 
 
-def test_report_contains_key_sections(predictions):
+def test_routing_metrics(banking_config):
+    preds = [
+        _pred("change_pin", "change_pin", "high"),  # auto, correct
+        _pred(OUT_OF_SCOPE, "change_pin", "high", source="pin_blocked"),  # auto, wrong
+        _pred("change_pin", "change_pin", "medium"),  # human: low_confidence
+        _pred("lost_or_stolen_card", "lost_or_stolen_card", "high"),  # human: high_risk
+        _pred(OUT_OF_SCOPE, OUT_OF_SCOPE, "low", error="boom"),  # human: classifier_error
+    ]
+    r = compute_routing(preds, banking_config)
+    assert (r.auto, r.auto_wrong, r.human) == (2, 1, 3)
+    assert r.auto_share == pytest.approx(0.4)
+    assert r.auto_error_rate == pytest.approx(0.5)
+    assert dict(r.reasons) == {"low_confidence": 1, "high_risk": 1, "classifier_error": 1}
+
+
+def test_report_contains_key_sections(predictions, banking_config):
     m = compute_metrics(predictions, LABELS)
+    routing = compute_routing([_pred("change_pin", "change_pin")], banking_config)
     report = render_report(
-        m, predictions, model="mock", settings=None, prompt_version="abc123", dataset="d.jsonl"
+        m,
+        predictions,
+        model="mock",
+        settings=None,
+        prompt_version="abc123",
+        dataset="d.jsonl",
+        routing=routing,
     )
-    for heading in ["## Summary", "## Accuracy by confidence", "## Per intent", "## Confusion"]:
+    for heading in [
+        "## Summary",
+        "## Accuracy by confidence",
+        "## Routing outcome (min_confidence = high)",
+        "## Per intent",
+        "## Confusion",
+    ]:
         assert heading in report
     assert "| Accuracy | 50.0% |" in report
     assert "pin_blocked" in report

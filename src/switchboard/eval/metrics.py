@@ -9,8 +9,10 @@ from pydantic import BaseModel
 from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 from sklearn.metrics import precision_recall_fscore_support as prfs
 
-from switchboard.config import OUT_OF_SCOPE, Confidence, PricingConfig
+from switchboard.config import OUT_OF_SCOPE, Confidence, PricingConfig, RouterConfig
 from switchboard.eval.harness import Prediction
+from switchboard.models import Action, Classification
+from switchboard.policy import decide
 
 
 class IntentMetrics(BaseModel):
@@ -121,4 +123,41 @@ def compute_metrics(
         avg_input_tokens=avg_in,
         avg_output_tokens=avg_out,
         cost_per_1k_usd=cost,
+    )
+
+
+class RoutingMetrics(BaseModel):
+    """What the policy layer would do with these predictions."""
+
+    min_confidence: Confidence
+    auto: int
+    auto_share: float
+    auto_wrong: int
+    auto_error_rate: float | None  # share of automated queries routed to the wrong intent
+    human: int
+    reasons: list[tuple[str, int]]  # escalation reason -> count (a query can have several)
+
+
+def compute_routing(predictions: list[Prediction], config: RouterConfig) -> RoutingMetrics:
+    auto_preds = []
+    reasons: Counter[str] = Counter()
+    for p in predictions:
+        decision = decide(
+            Classification(intent=p.predicted, confidence=p.confidence),
+            config,
+            classifier_error=p.error is not None,
+        )
+        if decision.action is Action.AUTO:
+            auto_preds.append(p)
+        reasons.update(r.value for r in decision.reasons)
+
+    auto_wrong = sum(not p.correct for p in auto_preds)
+    return RoutingMetrics(
+        min_confidence=config.policy.min_confidence,
+        auto=len(auto_preds),
+        auto_share=len(auto_preds) / len(predictions),
+        auto_wrong=auto_wrong,
+        auto_error_rate=auto_wrong / len(auto_preds) if auto_preds else None,
+        human=len(predictions) - len(auto_preds),
+        reasons=reasons.most_common(),
     )

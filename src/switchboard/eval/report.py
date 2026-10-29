@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 
 from switchboard.config import ModelConfig
 from switchboard.eval.harness import Prediction
-from switchboard.eval.metrics import EvalMetrics
+from switchboard.eval.metrics import EvalMetrics, RoutingMetrics
 
 
 def _pct(x: float | None) -> str:
@@ -21,6 +21,7 @@ def render_report(
     settings: ModelConfig | None,
     prompt_version: str,
     dataset: str,
+    routing: RoutingMetrics | None = None,
     max_errors_shown: int = 15,
 ) -> str:
     m = metrics
@@ -64,6 +65,20 @@ def render_report(
         f"| {b.confidence.value} | {b.count} | {_pct(b.share)} | {_pct(b.accuracy)} |"
         for b in m.by_confidence
     ]
+
+    if routing is not None:
+        r = routing
+        lines += [
+            "",
+            f"## Routing outcome (min_confidence = {r.min_confidence.value})",
+            "",
+            "| Outcome | Value |",
+            "|---|---|",
+            f"| Handled automatically | {r.auto} ({_pct(r.auto_share)}) |",
+            f"| Wrong among automated | {r.auto_wrong} ({_pct(r.auto_error_rate)}) |",
+            f"| Escalated to human | {r.human} ({_pct(1 - r.auto_share)}) |",
+        ]
+        lines += [f"| · reason: {reason} | {count} |" for reason, count in r.reasons]
 
     lines += [
         "",

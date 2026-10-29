@@ -28,7 +28,7 @@ def test_banking_config_loads():
     assert len(config.intents) == 8
     assert config.intent_names[-1] == OUT_OF_SCOPE
     assert config.get_intent("lost_or_stolen_card").risk is Risk.HIGH
-    assert config.policy.min_confidence is Confidence.MEDIUM
+    assert config.policy.min_confidence is Confidence.HIGH
     assert config.model.name == "claude-haiku-5-5"
     assert config.model.pricing is not None
 

@@ -100,7 +100,9 @@ out_of_scope:
   handler: human_queue
 
 policy:
-  min_confidence: medium
+  # Eval (Haiku 5.5, prompt 2dbfad9e): auto-handling at >= medium was wrong 11.8% of
+  # the time vs 2.3% at high, for 52% vs 42% of traffic automated. Precision wins.
+  min_confidence: high
   human_review_risks: [high]
 
 # LLM settings; each can be overridden with a SWITCHBOARD_* env variable.
