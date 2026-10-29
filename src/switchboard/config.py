@@ -62,11 +62,35 @@ class PolicyConfig(_Strict):
     human_review_risks: list[Risk] = Field(default_factory=lambda: [Risk.HIGH])
 
 
+class Effort(StrEnum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    XHIGH = "xhigh"
+    MAX = "max"
+
+
 class PricingConfig(_Strict):
     """USD per million tokens, used for cost estimates in eval reports."""
 
     input_per_mtok: float = Field(ge=0)
     output_per_mtok: float = Field(ge=0)
+
+
+class ModelConfig(_Strict):
+    """LLM call settings. Each field can be overridden by a SWITCHBOARD_* env variable."""
+
+    name: str = "claude-haiku-5-5"
+    max_tokens: int = Field(default=300, gt=0)
+    effort: Effort | None = Effort.LOW
+    thinking: bool = False
+    # Current API versions reject sampling parameters on every model. Temperature
+    # is only sent when `api_version` pins an older version that still accepts it.
+    temperature: float | None = Field(default=None, ge=0, le=1)
+    api_version: str | None = None
+    timeout_s: float = Field(default=10.0, gt=0)
+    max_retries: int = Field(default=2, ge=0)
+    pricing: PricingConfig | None = None
 
 
 class RouterConfig(_Strict):
@@ -75,7 +99,7 @@ class RouterConfig(_Strict):
     intents: list[IntentConfig] = Field(min_length=1)
     out_of_scope: OutOfScopeConfig
     policy: PolicyConfig = PolicyConfig()
-    pricing: PricingConfig | None = None
+    model: ModelConfig = ModelConfig()
 
     @model_validator(mode="after")
     def _check_intent_names(self) -> RouterConfig:

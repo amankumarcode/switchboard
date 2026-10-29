@@ -102,3 +102,19 @@ out_of_scope:
 policy:
   min_confidence: medium
   human_review_risks: [high]
+
+# LLM settings; each can be overridden with a SWITCHBOARD_* env variable.
+model:
+  name: claude-haiku-5-5
+  max_tokens: 300
+  effort: low
+  thinking: false
+  # temperature is only sent when api_version pins an older API version that
+  # accepts sampling parameters (the current version rejects them on every model).
+  temperature: null
+  api_version: null
+  timeout_s: 10
+  max_retries: 2
+  pricing:  # USD per million tokens, Anthropic first-party rates
+    input_per_mtok: 0.10
+    output_per_mtok: 0.50

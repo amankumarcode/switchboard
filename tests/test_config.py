@@ -29,6 +29,8 @@ def test_banking_config_loads():
     assert config.intent_names[-1] == OUT_OF_SCOPE
     assert config.get_intent("lost_or_stolen_card").risk is Risk.HIGH
     assert config.policy.min_confidence is Confidence.MEDIUM
+    assert config.model.name == "claude-haiku-5-5"
+    assert config.model.pricing is not None
 
 
 def test_minimal_config_defaults():
@@ -36,7 +38,9 @@ def test_minimal_config_defaults():
     assert config.intent_names == ["a", "b", OUT_OF_SCOPE]
     assert config.get_intent("a").risk is Risk.LOW
     assert config.policy.human_review_risks == [Risk.HIGH]
-    assert config.pricing is None
+    assert config.model.max_tokens == 300
+    assert config.model.temperature is None
+    assert config.model.pricing is None
 
 
 def test_confidence_rank_orders_levels():
