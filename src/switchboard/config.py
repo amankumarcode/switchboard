@@ -98,6 +98,8 @@ class RouterConfig(_Strict):
     version: str = Field(min_length=1)
     intents: list[IntentConfig] = Field(min_length=1)
     out_of_scope: OutOfScopeConfig
+    # Python module whose @handler functions implement this domain's handler names.
+    handlers_module: str | None = None
     policy: PolicyConfig = PolicyConfig()
     model: ModelConfig = ModelConfig()
 

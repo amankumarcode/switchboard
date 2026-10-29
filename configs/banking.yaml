@@ -4,6 +4,7 @@
 
 domain: retail_banking
 version: "0.1"
+handlers_module: switchboard.handlers.banking
 
 intents:
   - name: card_arrival

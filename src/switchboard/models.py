@@ -40,6 +40,7 @@ class EscalationReason(StrEnum):
     OUT_OF_SCOPE = "out_of_scope"
     LOW_CONFIDENCE = "low_confidence"
     HIGH_RISK = "high_risk"
+    HANDLER_ERROR = "handler_error"
 
 
 class RoutingDecision(BaseModel):
