@@ -1,18 +1,19 @@
-# Switchboard
+# Switchboard: a config-driven LLM intent router
 
-**A config-driven LLM intent router.** A customer message comes in, Claude classifies it
-into one of a fixed set of intents, a plain-code policy layer decides whether it is safe
-to automate, and a dispatcher runs the matching workflow or escalates to a human with the
-reason why.
+A customer message comes in, an LLM classifies it into one of a fixed set of intents, a
+plain-code policy layer decides whether it is safe to automate, and a dispatcher runs the
+matching workflow or escalates to a human with the reason why.
 
 The reference domain is retail-banking support, built on the
 [Banking77](https://huggingface.co/datasets/PolyAI/banking77) dataset. Everything
 domain-specific (intents, descriptions, examples, handlers, risk levels, policy
-thresholds, model settings) lives in one YAML file. The engine is generic.
+thresholds, model settings) lives in one YAML file. The engine is generic, and so is the
+LLM: providers sit behind a small interface. An Anthropic provider and an offline mock
+are included.
 
 ```mermaid
 flowchart LR
-    Q[Customer query] --> C["Classifier<br/>(Claude, structured output)"]
+    Q[Customer query] --> C["Classifier<br/>(LLM, structured output)"]
     C -->|intent, confidence,<br/>reasoning| P["Policy<br/>(plain code)"]
     P -->|auto| H["Handler<br/>(card, transfer, refund…)"]
     P -->|out of scope / low confidence /<br/>high risk / error| HQ[Human queue]
@@ -25,13 +26,34 @@ flowchart LR
 
 ## See it in action
 
-These are real runs against `claude-haiku-5-5` using the demo customer `cust_001` from
-[the fixture data](data/fixtures/accounts.json).
+You send a query with a single command. Switchboard then classifies it, applies the
+policy, and runs the matching workflow.
 
-**A routine request is handled automatically.** The handler looks up the card order:
+### The command
+
+```bash
+switchboard route "<customer query>" [--customer ID] [--config PATH] [--json]
+```
+
+| Argument | Required | What it does |
+|---|---|---|
+| `"<customer query>"` | yes | The customer's message, in quotes (1–2,000 characters) |
+| `--customer ID` | no | Which customer the request is from. Handlers use it to look up the account. Demo ids are `cust_001` and `cust_002`. Default: `SWITCHBOARD_DEFAULT_CUSTOMER`, or `anonymous` if that isn't set |
+| `--config PATH` | no | Which domain config to route with. Default: `configs/banking.yaml` |
+| `--json` | no | Print the full result as JSON instead of the readable summary |
+
+Which LLM is used comes from the environment, not the command line. Set
+`SWITCHBOARD_PROVIDER=anthropic` to use a real model, or leave it unset for the offline
+mock. `SWITCHBOARD_MODEL` and the other `SWITCHBOARD_*` variables in
+[.env.example](.env.example) override the model settings.
+
+### Example
+
+```bash
+switchboard route "my card hasn't arrived" --customer cust_001
+```
 
 ```text
-$ switchboard route "my card hasn't arrived" --customer cust_001
 intent      card_arrival (high)  secondary: -
 reasoning   Customer says their card has not arrived, matching card_arrival.
 decision    auto -> card_delivery_status  reasons: -
@@ -40,48 +62,63 @@ reply       Your card was shipped via Royal Mail and should arrive by 2026-10-30
 trace       c5e9fae7e0b7424fb1f0838e9e83dea5  model=claude-haiku-5-5 prompt=2dbfad9e 1273 ms
 ```
 
-**Another routine request.** The handler explains the actual fee on the account:
+**Reading the output:**
 
-```text
-$ switchboard route "Why was I charged a fee for paying by card abroad?" --customer cust_001
-intent      card_payment_fee_charged (high)  secondary: -
-decision    auto -> fee_explanation  reasons: -
-reply       The 1.20 GBP fee on 2026-10-26 at Café de Flore was a foreign currency card
-            payment (2.0% fee outside the free allowance).
+| Line | Meaning |
+|---|---|
+| `intent` | The intent the LLM chose, with its confidence (`low` / `medium` / `high`) and any secondary intents |
+| `reasoning` | The LLM's one-sentence explanation of the choice |
+| `decision` | What the policy decided. `auto` runs the intent's handler; `human` sends the request to the human queue and lists the reasons |
+| `status` | What the handler did: `ok` (the workflow ran), `not_found` (nothing to act on), or `queued` (handed to a person) |
+| `reply` | The message the customer gets back |
+| `trace` | A unique id that links this request to its decision-log line and any human-queue ticket, plus the model, prompt version and latency |
+
+### More examples
+
+| Customer query | Classified as | Decision | Customer gets |
+|---|---|---|---|
+| "Why was I charged a fee for paying by card abroad?" | `card_payment_fee_charged` (high) | **auto** → `fee_explanation` | "The 1.20 GBP fee on 2026-10-26 at Café de Flore was a foreign currency card payment (2.0% fee outside the free allowance)." |
+| "I think someone stole my card" | `lost_or_stolen_card` (high) | **human**, reason `high_risk` | "Thanks, a specialist will review your request and get back to you shortly." |
+| "I sent money to the wrong person, can I stop it?" | `cancel_transfer` (high) | **human**, reason `high_risk` | Same holding message, plus a ticket in the human queue |
+| "What's the exchange rate for euros today?" | `out_of_scope` (high) | **human**, reason `out_of_scope` | Same holding message, plus a ticket in the human queue |
+
+High-risk intents (lost or stolen card, compromised card, cancelling a transfer) always
+go to a person, even when the model is confident. Automated replies come from mock
+handlers that read a [fake customer account](data/fixtures/accounts.json).
+
+All examples are real runs against `claude-haiku-5-5` with the demo customer `cust_001`.
+
+### Evaluating instead of routing
+
+`switchboard eval` runs the classifier over a labeled set and writes a report (see
+[Results](#results)):
+
+```bash
+switchboard eval [--limit N] [--workers N] [--data PATH] [--config PATH] [--out-dir DIR]
 ```
 
-**A high-risk request goes to a human, even at high confidence:**
+| Argument | Default | What it does |
+|---|---|---|
+| `--limit N` | all rows | Only evaluate the first N rows (the set is shuffled, so this is a fair sample) |
+| `--workers N` | 4 | How many queries to classify in parallel |
+| `--data PATH` | `data/eval/banking77_eval.jsonl` | The labeled eval set |
+| `--config PATH` | `configs/banking.yaml` | The domain config to evaluate |
+| `--out-dir DIR` | `reports` | Where to write the report and the raw predictions |
 
-```text
-$ switchboard route "I think someone stole my card" --customer cust_001
-intent      lost_or_stolen_card (high)  secondary: -
-reasoning   Customer says their card was stolen, matching lost_or_stolen_card.
-decision    human -> human_queue  reasons: high_risk
-status      queued
-reply       Thanks, a specialist will review your request and get back to you shortly.
-```
+### Every request is logged
 
-**A request outside the supported intents is escalated with the reason recorded:**
-
-```text
-$ switchboard route "What's the exchange rate for euros today?" --customer cust_001
-intent      out_of_scope (high)  secondary: -
-decision    human -> human_queue  reasons: out_of_scope
-```
-
-Each request writes one line to the **decision log** (`logs/decisions.jsonl`). The raw
-query is left out by default because it may contain personal data:
+Each request writes one line to `logs/decisions.jsonl`. The raw query is left out by
+default, because it may contain personal data:
 
 ```json
-{"trace_id": "8131e127…", "timestamp": "2026-10-29T01:19:10.354+00:00",
- "prompt_version": "2dbfad9e", "model": "claude-haiku-5-5", "customer_id": "cust_001",
+{"trace_id": "8131e127…", "prompt_version": "2dbfad9e", "model": "claude-haiku-5-5",
  "intent": "lost_or_stolen_card", "confidence": "high", "action": "human",
- "handler": "human_queue", "reasons": ["high_risk"], "status": "queued",
- "latency_ms": 911.65, "input_tokens": 1714, "output_tokens": 67, ...}
+ "reasons": ["high_risk"], "status": "queued", "latency_ms": 911.65,
+ "input_tokens": 1714, "output_tokens": 67, ...}
 ```
 
-Escalations also create a ticket in `logs/human_queue.jsonl` with the query text for the
-reviewer. The same `trace_id` appears in the reply, the log and the ticket.
+Each escalation also creates a ticket in `logs/human_queue.jsonl`. The ticket includes
+the query text, because a reviewer needs to read it.
 
 ## Results
 
@@ -118,8 +155,7 @@ For a bank, precision matters more than coverage, so the default threshold is `h
 
 **Where it struggles:** out-of-scope recall is 67%. Most of the misses are near-miss
 intents that look like supported ones, such as "How do I unblock my PIN?" being routed
-to `change_pin`. Some are arguably label noise in Banking77. See
-[Next steps](#next-steps).
+to `change_pin`. Some are arguably label noise in Banking77.
 
 Setup: `claude-haiku-5-5`, prompt `2dbfad9e`, effort `low`, thinking off.
 Reproduce with `switchboard eval`.
@@ -147,7 +183,9 @@ uv run switchboard route "I want to change my PIN" --customer cust_001
 uv run switchboard route "My card was stolen" --customer cust_001 --json
 ```
 
-### 3. Run it with Claude
+### 3. Run it with a real LLM
+
+The included provider uses the Anthropic API:
 
 ```bash
 cp .env.example .env
@@ -176,116 +214,6 @@ predictions are written next to it.
 ```bash
 uv run pytest            # about 100 tests, all offline
 uv run ruff check
-```
-
-## How it works
-
-| Stage | File | What it does |
-|---|---|---|
-| Config | [config.py](src/switchboard/config.py), [banking.yaml](configs/banking.yaml) | Strict Pydantic schema. Unknown keys, duplicate intents or missing handlers fail at startup. |
-| Prompt | [prompt.py](src/switchboard/prompt.py) | Builds the system prompt and JSON schema from config. The intent field is an `enum` of the configured intents. `prompt_version` is a hash of both. |
-| Classifier | [classifier.py](src/switchboard/classifier.py) | Calls the provider and validates the output. **It never raises:** any failure becomes `out_of_scope` / `low` with the error recorded. |
-| Providers | [anthropic.py](src/switchboard/providers/anthropic.py), [mock.py](src/switchboard/providers/mock.py) | Claude uses structured outputs (`output_config.format`). The mock runs offline for tests and CI. |
-| Policy | [policy.py](src/switchboard/policy.py) | A pure function that escalates on `out_of_scope`, `low_confidence`, `high_risk` or `classifier_error`, and records every reason that applies. |
-| Dispatcher | [dispatcher.py](src/switchboard/dispatcher.py), [handlers/](src/switchboard/handlers/) | Looks up the handler by name and runs it. **If the handler raises,** the request is escalated with `handler_error`. |
-| Router | [router.py](src/switchboard/router.py), [decision_log.py](src/switchboard/decision_log.py) | Runs the whole pipeline and writes one JSON line per request. |
-| Eval | [eval/](src/switchboard/eval/) | Harness, metrics (scikit-learn) and markdown report. |
-
-### Swapping the domain
-
-To route IT-helpdesk or HR queries instead, you don't change the engine:
-
-1. Write a new config with your intents, descriptions, examples, risk levels and
-   handler names:
-
-   ```yaml
-   domain: it_helpdesk
-   version: "0.1"
-   handlers_module: my_company.helpdesk_handlers
-   intents:
-     - name: password_reset
-       description: The user is locked out or wants to reset their password.
-       examples: ["I forgot my password", "locked out of my account"]
-       handler: reset_password
-       risk: low
-   out_of_scope:
-     description: Anything else.
-     handler: human_queue
-   ```
-
-2. Implement the handlers in that module:
-
-   ```python
-   from switchboard.handlers import HandlerContext, HandlerResult, HandlerStatus, handler
-
-
-   @handler("reset_password")
-   def reset_password(ctx: HandlerContext) -> HandlerResult:
-       ...
-       return HandlerResult(status=HandlerStatus.OK, message="Reset link sent.")
-   ```
-
-3. Run it with `SWITCHBOARD_CONFIG=configs/helpdesk.yaml`. At startup, Switchboard
-   checks that every handler named in the config is implemented.
-
-### Model settings
-
-These are set in the config's `model:` section, and each one can be overridden with a
-`SWITCHBOARD_*` env variable (see [.env.example](.env.example)):
-
-| Setting | Default | Notes |
-|---|---|---|
-| `name` | `claude-haiku-5-5` | |
-| `max_tokens` | 300 | |
-| `effort` | `low` | |
-| `thinking` | `false` | |
-| `temperature` | not sent | See below. |
-| `api_version` | not set | Pins an older API version. |
-| `timeout_s` / `max_retries` | 10 / 2 | |
-| `pricing` | $0.10 / $0.50 per million tokens | Used for cost estimates. |
-
-**About temperature:** the current Claude API rejects sampling parameters on every
-model. Temperature is therefore sent only when `api_version` pins an older version (and
-a model) that still accepts it. Otherwise it is ignored with a warning.
-
-## Design decisions
-
-- **The LLM proposes, code decides.** The model never chooses whether to act. The policy
-  layer is plain, tested code with thresholds taken from config.
-- **Fail safe, never fail loud.** A provider outage, invalid output or a crashing handler
-  all end in the human queue with a reason. A request never ends in an exception.
-- **The output is constrained by a schema.** The intent is an `enum` in the JSON schema,
-  so the model can't invent labels. Each response starts with a one-sentence `reasoning`
-  field, which helps tell near misses apart.
-- **Prompt injection hygiene.** The customer text is wrapped in `<query>` tags, and the
-  prompt tells the model to treat it as data, never as instructions.
-- **Eval-driven choices.** The confidence threshold was picked from measured
-  accuracy-by-bucket, and every report records the prompt version.
-- **Privacy by default.** The decision log omits the query text unless
-  `SWITCHBOARD_LOG_QUERIES=true`.
-
-## Next steps
-
-- **Tighten out-of-scope boundaries.** Add explicit "this is *not* X" guidance to the
-  intent descriptions (e.g. a blocked PIN is not `change_pin`), pick better few-shot
-  examples, and re-measure with the eval.
-- **HTTP API.** Add `POST /route` with FastAPI, as a thin wrapper around `Router.route()`
-  so other services can call it.
-- **Embedding fast path.** Skip the LLM for queries that are very close to known
-  examples, and measure the cost and accuracy with the same eval.
-
-## Project layout
-
-```text
-configs/banking.yaml          all domain knowledge
-data/eval/                    420-row labeled eval set (generated, committed)
-data/fixtures/accounts.json   fake customers for the mock handlers
-scripts/prepare_data.py       rebuilds the eval set and few-shot examples from Banking77
-scripts/smoke_anthropic.py    5-query live smoke test
-src/switchboard/              engine (config, prompt, classifier, policy, dispatcher, router)
-src/switchboard/handlers/     registry, built-in human queue, banking mock handlers
-src/switchboard/eval/         eval harness, metrics, report
-tests/                        offline test suite (mock provider)
 ```
 
 ## Data and credits
